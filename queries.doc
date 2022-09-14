@@ -1,0 +1,121 @@
+# query {
+#   findItem(id:7) {
+#     id
+#     title
+#     description
+#   }
+# }
+# query artists{
+#   artists{
+#     id
+#     email
+#     firstName
+#     lastName
+#     items {
+#       id
+#       title
+#       description
+#     }
+#   }
+# }
+# mutation {
+#   UpdateArtistMutation(
+#     input: {id: 2, lastName: "malik01"}
+#   ) {
+#     artist {
+#       id
+#       email
+#       firstName
+#       lastName
+#       fullName
+#       items {
+#         id
+#         title
+#         description
+#       }
+#     }
+#     errors
+#   }
+# }
+# mutation {
+#   createItemMutation(
+#     input: {
+#       title:"testing 01", 
+#       description:"Testing create item mutation.",
+#       artistId: 3
+#     }
+#   ) {
+#     item {
+#       id
+#       title
+#       description
+#       imageUrl
+#       artist {
+#         id
+#         firstName
+#         lastName
+#       }
+#     }
+#     errors
+#   }
+# }
+
+# mutation {
+#   updateArtist(
+#    input:{ id:3, email:"hafeezzzz@123"
+#   } )
+#   {
+#     id
+#     firstName
+#     email
+#     lastName
+#     items{
+#       id
+#       title
+#     }
+#   }
+   
+# }
+
+# mutation {
+#   destroyItem(
+#     input:{
+#       id: 13
+#     }
+#   )
+#   {
+#     id
+#     title
+#     description
+#     artistId
+#   }
+# }
+
+# mutation {
+#   createUser( input:{
+#     name: "Test User 01",
+#     email: "email01@example.com",
+#     password: "123456"
+#     }) {
+#     user {
+#     id
+#     name
+#     email
+#      }
+#     }
+# }
+mutation {
+  signUser( input:{
+    email: "email01@example.com",
+    password: "123456"
+    }) {
+    user{
+    id
+    name
+    email 
+    }
+    token
+   }
+  
+}
+
